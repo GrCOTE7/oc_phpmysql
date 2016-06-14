@@ -15,14 +15,17 @@ $(document).ready(function () {
     $("#projet").find("H1")
         .css({})
         .click(function () {
+            if ($(this).is(':animated')) { // Annule click pdt animation
+                return false;
+            }
+            ;
             reinit(); // IMPORTANT ICI: (Pas après: Doit scoper le der &lement)
             $("#projet").find("h1")
+                // .unbind('click')
                 .css({'transition': 'none'})
                 .toggle(7777)
         });
 
-    
-    
 
     $("#liste").sortable();
     $("#liste").disableSelection();
