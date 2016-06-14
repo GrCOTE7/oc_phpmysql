@@ -43,7 +43,7 @@ body {
     margin           : 0 2%;
     padding          : 5px 2%;
     border           : 1px solid orange;
-    .border-radius; // Par défaut 10px
+    .border-radius(7px); // Par défaut 10px
     //.border-radius(7px); // Par défaut 10px
     background-color : #fff;
     list-style-type  : none;
@@ -62,7 +62,7 @@ hr {
   line-height : .5em;
 }
 
-#container, #projet {
+#projet {
   margin     : 0 1%;
   width      : 98%;
   text-align : justify;
@@ -95,18 +95,25 @@ td {
   padding   : 1px 5px;
 }
 
-#container.center {
-  text-align : center;
-}
-
-body #projet {
+#projet {
   font-size   : 1em;
   line-height : 1;
-}
 
-#projet {
+  #main {
+    display         : flex;
+    justify-content : space-around;
+    border          : 1px solid red;
+    .border-radius();
+
+    section {
+      -webkit-flex : 1; /* Safari 6.1+ */
+      -ms-flex     : 1; /* IE 10 */
+      flex         : 1;
+    }
+  }
 
   h1 {
+    text-align : center;
     font-size  : 1.2em;
     margin-top : 0;
     height     : 25px;
@@ -117,34 +124,68 @@ body #projet {
     cursor : pointer;
   }
   h1:nth-child(2) {
-    font-size : 1em;
-    display   : none;
+    font-size      : 1em;
+    display        : none;
     vertical-align : middle;
   }
 
-  #sortable {
-    list-style-type : none;
-    margin          : 0 auto;
-    padding         : 5px;
-    width           : 40%;
-    //border:1px solid red;
-  }
-  #sortable li {
-    //margin       : 0 3px 3px 3px;
-    margin       : 10px;
-    padding      : 0;
-    padding-top : 10px;
-    padding-left : 1.5em;
-    font-size    : 1.2em;
-    height       : 40px;
-    cursor       : pointer;
-    //border:1px solid blue;
-  }
+  #blocliste {
 
-  #sortable li span {
-    position    : absolute;
-    margin-left : -1.3em;
-    //border:1px solid green;
-  }
+    //width  : 50%;
+    //border : 1px solid blue;
 
+    #liste {
+      list-style-type : none;
+      margin          : 0 auto 20px;
+      padding         : 0 5px;
+      width           : 60%;
+      //border:1px solid red;
+    }
+    #liste li {
+      //margin       : 0 3px 3px 3px;
+      margin    : 10px;
+      padding   : 10px 1em 0 2em;
+      font-size : 1.2em;
+      height    : 40px;
+      cursor    : pointer;
+      .border-radius(5px);
+      //border:1px solid blue;
+    }
+
+    #liste li span {
+      position    : absolute;
+      margin-left : -1.3em;
+      //border:1px solid green;
+    }
+
+    #bloctableau {
+      .current-row {
+        /*background-color : #B24926;*/
+        /*color : #FFF;*/
+      }
+
+      .current-col {
+        /*background-color : #1b1b1b;*/
+        /*color            : #FFF;*/
+      }
+
+      .tbl-qa {
+        width     : 100%;
+        font-size : 0.9em;
+        /*background-color : #f5f5f5;*/
+      }
+
+      .tbl-qa th.table-header {
+        text-align : left;
+        padding    : 0 10px 10px 10px;
+      }
+
+      .tbl-qa .table-row td {
+        padding          : 5px 10px;
+        background-color : #FDFDFD;
+
+      }
+    }
+
+  }
 }

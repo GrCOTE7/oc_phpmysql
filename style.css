@@ -17,9 +17,9 @@ body {
   margin: 0 2%;
   padding: 5px 2%;
   border: 1px solid orange;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
   background-color: #fff;
   list-style-type: none;
 }
@@ -32,7 +32,6 @@ a:hover {
 hr {
   line-height: .5em;
 }
-#container,
 #projet {
   margin: 0 1%;
   width: 98%;
@@ -54,14 +53,27 @@ td {
   font-size: 1.2em;
   padding: 1px 5px;
 }
-#container.center {
-  text-align: center;
-}
-body #projet {
+#projet {
   font-size: 1em;
   line-height: 1;
 }
+#projet #main {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#projet #main section {
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+}
 #projet h1 {
+  text-align: center;
   font-size: 1.2em;
   margin-top: 0;
   height: 25px;
@@ -75,22 +87,44 @@ body #projet {
   display: none;
   vertical-align: middle;
 }
-#projet #sortable {
+#projet #blocliste #liste {
   list-style-type: none;
-  margin: 0 auto;
-  padding: 5px;
-  width: 40%;
+  margin: 0 auto 20px;
+  padding: 0 5px;
+  width: 60%;
 }
-#projet #sortable li {
+#projet #blocliste #liste li {
   margin: 10px;
-  padding: 0;
-  padding-top: 10px;
-  padding-left: 1.5em;
+  padding: 10px 1em 0 2em;
   font-size: 1.2em;
   height: 40px;
   cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
-#projet #sortable li span {
+#projet #blocliste #liste li span {
   position: absolute;
   margin-left: -1.3em;
+}
+#projet #blocliste #bloctableau .current-row {
+  /*background-color : #B24926;*/
+  /*color : #FFF;*/
+}
+#projet #blocliste #bloctableau .current-col {
+  /*background-color : #1b1b1b;*/
+  /*color            : #FFF;*/
+}
+#projet #blocliste #bloctableau .tbl-qa {
+  width: 100%;
+  font-size: 0.9em;
+  /*background-color : #f5f5f5;*/
+}
+#projet #blocliste #bloctableau .tbl-qa th.table-header {
+  text-align: left;
+  padding: 0 10px 10px 10px;
+}
+#projet #blocliste #bloctableau .tbl-qa .table-row td {
+  padding: 5px 10px;
+  background-color: #FDFDFD;
 }
