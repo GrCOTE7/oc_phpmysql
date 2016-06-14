@@ -42,7 +42,7 @@ body {
   li {
     margin           : 0 2%;
     padding          : 5px 2%;
-    border           : 1px solid grey;
+    border           : 1px solid orange;
     .border-radius; // Par défaut 10px
     //.border-radius(7px); // Par défaut 10px
     background-color : #fff;
@@ -86,7 +86,7 @@ footer {
   font-size        : .7em;
   //line-height : 0;
   p {
-    margin-top : -2px;
+    //margin-top : -2px;
   }
 }
 
@@ -99,10 +99,46 @@ td {
   text-align : center;
 }
 
+body #projet {
+  font-size   : 1em;
+  line-height : 1;
+}
+
 #projet {
-  h1 {font-size:1.2em;
-    margin-top : 0;}
+
+  h1 {
+    font-size  : 1.2em;
+    margin-top : 0;
+  }
+  h1:hover {
+    color  : red;
+    cursor : pointer;
+  }
   h1:nth-child(2) {
     display : none;
   }
+
+  #sortable {
+    list-style-type : none;
+    margin          : 0;
+    padding         : 0;
+    width           : 40%;
+    //border:1px solid red;
+  }
+  #sortable li {
+    margin       : 0 3px 3px 3px;
+    padding      : 0;
+    padding-left : 1.5em;
+    font-size    : 1.2em;
+    height       : 18px;
+    cursor : pointer;
+    //border:1px solid blue;
+  }
+
+  #sortable li span {
+    position    : absolute;
+    margin-left : -1.3em;
+    //border:1px solid green;
+  }
+
 }

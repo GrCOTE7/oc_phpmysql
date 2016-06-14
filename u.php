@@ -1,7 +1,19 @@
 <? include 'top.php' ?>
+<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
 <div id="projet">
   <h1>Tableau Inline Editinig Blur</h1>
   <h1>Utilise jQ API + jQ-UI</h1>
+
+  <ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+  </ul>
+  
   <?php
   require_once ( "tableau/PDOManager.php" );
   $db  = new PDOManager();
@@ -38,6 +50,7 @@
     .tbl-qa .table-row td {
       padding          : 5px 10px;
       background-color : #FDFDFD;
+
     }
   </style>
   <!--      <script src="tableau/jquery-1.10.2.js"></script>-->
@@ -127,6 +140,8 @@
   </html>
 
 </div>
-<? $scriptjs_perso =
-  '<script src="js/u.js"></script>';
+<? $scriptjs_perso = '
+  <script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+  <script src="js/u.js">
+</script>';
 include 'bottom.php' ?>
