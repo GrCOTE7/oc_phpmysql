@@ -50,11 +50,24 @@ body {
   }
 }
 
+.animelementin {
+  transition : all .5s ease-in-out;
+}
+
+.animelementout {
+  transition : all 2s ease-in-out;
+}
+
 //Utilisation de & (=$this)
 a {
   text-decoration : none;
+  .animelementout;
+
   &:hover {
-    text-shadow : 0 0 5px red;
+    color           : red;
+    text-decoration : none;
+    text-shadow     : 0 0 5px red;
+    .animelementin;
   }
 }
 
@@ -63,10 +76,7 @@ hr {
 }
 
 #projet {
-  margin     : 0 1%;
-  width      : 98%;
-  text-align : justify;
-  //border     : 1px solid red;
+
 }
 
 #main {
@@ -96,14 +106,24 @@ td {
 }
 
 #projet {
-  font-size   : 1em;
+  width       : 98%;
   line-height : 1;
+  font-size   : 1em;
+  text-align  : justify;
+  margin      : 0 1%;
+  //border     : 1px solid red;
+
+  #mytext {
+    margin     : 7px auto;
+    text-align : center;
+  }
 
   #main {
     display         : flex;
     justify-content : space-around;
     border          : 1px solid red;
     .border-radius();
+    margin-bottom   : 10px;
 
     section {
       -webkit-flex : 1; /* Safari 6.1+ */
@@ -111,22 +131,32 @@ td {
       flex         : 1;
     }
   }
+  header {
+    transition : all 2s ease-in-out;
+    &:hover {
+      transition : all .5s ease-in-out;
+    }
+  }
 
   h1 {
-    text-align : center;
-    font-size  : 1.2em;
-    margin-top : 0;
-    height     : 25px;
-  }
-
-  h1:hover {
-    color  : red;
-    cursor : pointer;
-  }
-  h1:nth-child(2) {
-    font-size      : 1em;
-    display        : none;
-    vertical-align : middle;
+    background-color : orange;
+    padding          : 3px 5px;
+    border-radius    : 7px;
+    text-align       : center;
+    font-size        : 1.2em;
+    margin-top       : 0;
+    height           : 25px;
+    transition       : all 2s ease-in-out;
+    &:hover {
+      color      : red;
+      cursor     : pointer;
+      transition : all .5s ease-in-out;
+    }
+    &:nth-child(2) {
+      font-size      : 1em;
+      display        : none;
+      vertical-align : middle;
+    }
   }
 
   #blocliste {
@@ -141,8 +171,12 @@ td {
       width           : 60%;
       //border:1px solid red;
     }
+
     #liste li {
-      //margin       : 0 3px 3px 3px;
+      &:hover {
+        color      : green;
+        background : yellow;
+      }
       margin    : 10px;
       padding   : 10px 1em 0 2em;
       font-size : 1.2em;

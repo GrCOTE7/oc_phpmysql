@@ -23,19 +23,24 @@ body {
   background-color: #fff;
   list-style-type: none;
 }
+.animelementin {
+  transition: all 0.5s ease-in-out;
+}
+.animelementout {
+  transition: all 2s ease-in-out;
+}
 a {
   text-decoration: none;
+  transition: all 2s ease-in-out;
 }
 a:hover {
+  color: red;
+  text-decoration: none;
   text-shadow: 0 0 5px red;
+  transition: all 0.5s ease-in-out;
 }
 hr {
   line-height: .5em;
-}
-#projet {
-  margin: 0 1%;
-  width: 98%;
-  text-align: justify;
 }
 #main {
   text-align: center;
@@ -54,8 +59,15 @@ td {
   padding: 1px 5px;
 }
 #projet {
-  font-size: 1em;
+  width: 98%;
   line-height: 1;
+  font-size: 1em;
+  text-align: justify;
+  margin: 0 1%;
+}
+#projet #mytext {
+  margin: 7px auto;
+  text-align: center;
 }
 #projet #main {
   display: flex;
@@ -64,6 +76,7 @@ td {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 #projet #main section {
   -webkit-flex: 1;
@@ -72,15 +85,26 @@ td {
   /* IE 10 */
   flex: 1;
 }
+#projet header {
+  transition: all 2s ease-in-out;
+}
+#projet header:hover {
+  transition: all 0.5s ease-in-out;
+}
 #projet h1 {
+  background-color: orange;
+  padding: 3px 5px;
+  border-radius: 7px;
   text-align: center;
   font-size: 1.2em;
   margin-top: 0;
   height: 25px;
+  transition: all 2s ease-in-out;
 }
 #projet h1:hover {
   color: red;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 #projet h1:nth-child(2) {
   font-size: 1em;
@@ -102,6 +126,10 @@ td {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+#projet #blocliste #liste li:hover {
+  color: green;
+  background: yellow;
 }
 #projet #blocliste #liste li span {
   position: absolute;

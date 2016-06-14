@@ -1,10 +1,14 @@
 <? include 'top.php' ?>
-<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
+<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css"/>
 <div id="projet">
-  <h1>Liste & Tableau Inline Editinig Blur</h1>
-  <h1>HTML5 + CSS3 + LESS + Bootstrap + PHP/MySQL + jQ API + jQ-UI + AJAX</h1>
+  <header>
+    <h1>Liste & Tableau Inline Editinig Blur</h1>
+    <h1>HTML5 + CSS3 + LESS + Bootstrap + PHP/MySQL + jQ API + jQ-UI + AJAX</h1>
+  </header>
 
+  <h3 id="mytext">Cliquer sur le titre...</h3>
   <div id="main">
+
 
     <section id="blocliste">
       <h2>Liste</h2>
@@ -32,41 +36,8 @@
       $sql = "SELECT * FROM sortable_liste_items WHERE owner='tableau' ORDER BY uorder";
       $t   = $db->query ( $sql );
       ?>
-      <style>
-        body {
-          /*background-color : cornsilk;*/
-          /*width            : 610px;*/
-        }
 
-        
-      </style>
       <!--      <script src="tableau/jquery-1.10.2.js"></script>-->
-
-      <script>
-        function displayVal() {
-          var singleValue = $("#phase" + this.id).val();
-          console.log('Nouvelle valeur = ' + singleValue);
-        }
-        function showEdit(editableObj) {
-          $(editableObj).css("background", "#0F0");
-        }
-
-        function saveToDatabase(editableObj, column, id) {
-          $(editableObj).css("background", "#FFA500 url(tableau/loaderIcon.gif) no-repeat right");
-          var myselect = $("#phaseid option:selected").text();
-          console.log('Selected value = ' + myselect);
-          $.ajax({
-            url: "tableau/saved.php",
-            type: "POST",
-            data: 'column=' + column + '&editedval=' + myselect + '&id=' + id,
-            success: function (data) {
-//              console.log(data);
-              $(editableObj).css("background", "#FDFDFD");
-            }
-          })
-          ;
-        }
-      </script>
 
       <table class="tbl-qa" id="tableau">
 
@@ -121,7 +92,7 @@
         </tbody>
         <!--
     contenteditable = "true"
-    onBlur  = "saveToDatabase(this,'phase','<?= $d["id"]; ?>')"
+    onBlur  = "saveToDatabase(this,'phase','<? //= $d["id"]; ?>')"
     onClick = "showEdit(this);" >
     -->
       </table>
