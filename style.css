@@ -16,7 +16,7 @@ body {
 .element_menu ul li {
   margin: 0 2%;
   padding: 5px 2%;
-  border: 1px solid grey;
+  border: 1px solid orange;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -32,7 +32,8 @@ a:hover {
 hr {
   line-height: .5em;
 }
-#container {
+#container,
+#projet {
   margin: 0 1%;
   width: 98%;
   text-align: justify;
@@ -49,13 +50,43 @@ footer {
   font-style: italic;
   font-size: .7em;
 }
-footer p {
-  margin-top: -2px;
-}
 td {
   font-size: 1.2em;
   padding: 1px 5px;
 }
 #container.center {
   text-align: center;
+}
+body #projet {
+  font-size: 1em;
+  line-height: 1;
+}
+#projet h1 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+#projet h1:hover {
+  color: red;
+  cursor: pointer;
+}
+#projet h1:nth-child(2) {
+  display: none;
+}
+#projet #sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 40%;
+}
+#projet #sortable li {
+  margin: 0 3px 3px 3px;
+  padding: 0;
+  padding-left: 1.5em;
+  font-size: 1.2em;
+  height: 18px;
+  cursor: pointer;
+}
+#projet #sortable li span {
+  position: absolute;
+  margin-left: -1.3em;
 }

@@ -14,7 +14,6 @@ $(document).ready(function () {
 
     $('#macase').click(function () {
         $("#macase p").toggle(500);
-        // $("#p2").toggle(500);
     });
 
 

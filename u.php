@@ -1,78 +1,86 @@
 <? include 'top.php' ?>
-<div id="container"><h2>Tableau Inline Editinig Blur</h2>
+<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
+<div id="projet">
+  <h1>Tableau Inline Editinig Blur</h1>
+  <h1>Utilise jQ API + jQ-UI</h1>
+
+  <ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+  </ul>
+  
   <?php
   require_once ( "tableau/PDOManager.php" );
   $db  = new PDOManager();
   $sql = 'SELECT * from taches_etapes ORDER BY ordre';
   $t   = $db->query ( $sql );
   ?>
-  <html>
-  <head>
-    <head>
-      <meta charset="UTF-8">
-      <title>PHP MySQL Inline Editing using jQuery Ajax</title>
-      <style>
-        body {
-          background-color : cornsilk;
-          /*width            : 610px;*/
-        }
+  <style>
+    body {
+      background-color : cornsilk;
+      /*width            : 610px;*/
+    }
 
-        .current-row {
-          background-color : #B24926;
-          color            : #FFF;
-        }
+    .current-row {
+      background-color : #B24926;
+      color            : #FFF;
+    }
 
-        .current-col {
-          background-color : #1b1b1b;
-          color            : #FFF;
-        }
+    .current-col {
+      background-color : #1b1b1b;
+      color            : #FFF;
+    }
 
-        .tbl-qa {
-          width     : 100%;
-          font-size : 0.9em;
-          /*background-color : #f5f5f5;*/
-        }
+    .tbl-qa {
+      width     : 100%;
+      font-size : 0.9em;
+      /*background-color : #f5f5f5;*/
+    }
 
-        .tbl-qa th.table-header {
-          text-align : left;
-          padding    : 0 10px 10px 10px;
-        }
+    .tbl-qa th.table-header {
+      text-align : left;
+      padding    : 0 10px 10px 10px;
+    }
 
-        .tbl-qa .table-row td {
-          padding          : 5px 10px;
-          background-color : #FDFDFD;
-        }
-      </style>
-      <!--      <script src="tableau/jquery-1.10.2.js"></script>-->
+    .tbl-qa .table-row td {
+      padding          : 5px 10px;
+      background-color : #FDFDFD;
 
-      <script>
-        function displayVal() {
-          var singleValue = $("#phase" + this.id).val();
-          console.log('Nouvelle valeur = ' + singleValue);
-        }
-        function showEdit(editableObj) {
-          $(editableObj).css("background", "#0F0");
-        }
+    }
+  </style>
+  <!--      <script src="tableau/jquery-1.10.2.js"></script>-->
 
-        function saveToDatabase(editableObj, column, id) {
-          $(editableObj).css("background", "#FFA500 url(tableau/loaderIcon.gif) no-repeat right");
-          var myselect = $("#phaseid option:selected").text();
-          console.log('Selected value = ' + myselect);
-          $.ajax({
-            url: "tableau/saved.php",
-            type: "POST",
-            data: 'column=' + column + '&editedval=' + myselect + '&id=' + id,
-            success: function (data) {
+  <script>
+    function displayVal() {
+      var singleValue = $("#phase" + this.id).val();
+      console.log('Nouvelle valeur = ' + singleValue);
+    }
+    function showEdit(editableObj) {
+      $(editableObj).css("background", "#0F0");
+    }
+
+    function saveToDatabase(editableObj, column, id) {
+      $(editableObj).css("background", "#FFA500 url(tableau/loaderIcon.gif) no-repeat right");
+      var myselect = $("#phaseid option:selected").text();
+      console.log('Selected value = ' + myselect);
+      $.ajax({
+        url: "tableau/saved.php",
+        type: "POST",
+        data: 'column=' + column + '&editedval=' + myselect + '&id=' + id,
+        success: function (data) {
 //              console.log(data);
-              $(editableObj).css("background", "#FDFDFD");
-            }
-          })
-          ;
+          $(editableObj).css("background", "#FDFDFD");
         }
-      </script>
+      })
+      ;
+    }
+  </script>
 
-    </head>
-  <body>
   <table class="tbl-qa">
     <thead>
     <tr>
@@ -132,4 +140,8 @@
   </html>
 
 </div>
-<? include 'bottom.php' ?>
+<? $scriptjs_perso = '
+  <script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+  <script src="js/u.js">
+</script>';
+include 'bottom.php' ?>
