@@ -3,22 +3,76 @@
  */
 $(document).ready(function () {
 
-    // $("#projet").hide();
+    function reinit() {
+        var reinit = setTimeout(function () {
+            $('#mytext').html('(Anim CSS + jQ)').css('font-style', 'italic');
+            $("#projet").find("h1").removeAttr('style');
+            $("#projet").find("h1").css('display', 'block');
+        }, 7777);
+    };
 
-    $("#projet h1").css("background-color", "orange").css("padding", "3px 5px").css("border-radius", "7px");
+    // ### GESTION Barre du titre ###
+    $("#projet").find("H1")
+        .css({})
+        .click(function () {
+            if ($(this).is(':animated')) { // Annule click pdt animation
+                return false;
+            }
+            ;
+            reinit(); // IMPORTANT ICI: (Pas après: Doit scoper le der &lement)
+            $("#projet").find("h1")
+                // .unbind('click')
+                .css({'transition': 'none'})
+                .toggle(7777)
+        });
 
-    $('#projet h1').click(function () {
-        $("#projet h1").toggle(500);
-    });
 
-    $("#sortable").sortable();
-    $("#sortable").disableSelection();
-    $("#sortable .ui-state-default").mousedown(function () {
+    $("#liste").sortable();
+    $("#liste").disableSelection();
+    $("#liste .ui-state-default").mousedown(function () {
         console.log('Choisi');
-        $("#sortable .ui-state-default").css("cursor", "move");
+        $("#liste .ui-state-default").css("cursor", "move");
     });
-    $("#sortable li").on("sortstop", function () {
-        $("h1").html("Ok");
+    $('#liste').sortable({
+        connectWith: '#liste',
+        update: function (event, ui) {
+            var changedList = this.id;
+            var order = $(this).sortable('toArray');
+            var positions = order.join(';');
+
+            $("h1").html("Série: " + changedList + " - " + positions);
+
+            console.log({
+                id: changedList,
+                positions: positions
+            });
+        }
     });
-    // console.log('Fin');
-});
+
+
+    function displayVal() {
+        var singleValue = $("#phase" + this.id).val();
+        console.log('Nouvelle valeur = ' + singleValue);
+    }
+
+    function showEdit(editableObj) {
+        $(editableObj).css("background", "#0F0");
+    }
+
+    function saveToDatabase(editableObj, column, id) {
+        $(editableObj).css("background", "#FFA500 url(tableau/loaderIcon.gif) no-repeat right");
+        var myselect = $("#phaseid option:selected").text();
+        console.log('Selected value = ' + myselect);
+        $.ajax({
+            url: "tableau/saved.php",
+            type: "POST",
+            data: 'column=' + column + '&editedval=' + myselect + '&id=' + id,
+            success: function (data) {
+//              console.log(data);
+                $(editableObj).css("background", "#FDFDFD");
+            }
+        })
+        ;
+    }
+})
+;
