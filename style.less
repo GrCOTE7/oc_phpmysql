@@ -1,0 +1,100 @@
+/* --clean-css Option de less pour minifier */
+/* (Commentaire CSS visible ds CSS si pas minifié, les autres invisibles)*/
+
+// Possibilité de @include 'partie.less'
+
+// Déclaration
+@blue : #010BFF;
+@magenta : #FF17B6;
+@lime : #B6FF17;
+@green : #1BFF17;
+@bg : cornsilk;
+@unpx : 1px;
+@deuxpx : 2px;
+
+//Définition d'une classe abstraite
+.border-radius (@radius:10px) {
+  -webkit-border-radius : @radius;
+  -moz-border-radius    : @radius;
+  border-radius         : @radius;
+}
+
+// Utilisation
+#header {
+  //background : @blue;
+}
+
+body {
+  padding-bottom   : 20px;
+  color            : @blue;
+  margin           : 0 auto;
+  width            : 100%;
+  background-color : @bg;
+  //background-color : @green;
+  font-size        : 1.5em;
+  font-family      : arial, Times New Roman, serif;
+}
+
+//Imbrication des sélecteurs
+.element_menu ul {
+  display    : flex;
+  margin-top : 20px;
+  li {
+    margin           : 0 2%;
+    padding          : 5px 2%;
+    border           : 1px solid grey;
+    .border-radius; // Par défaut 10px
+    //.border-radius(7px); // Par défaut 10px
+    background-color : #fff;
+    list-style-type  : none;
+  }
+}
+
+//Utilisation de & (=$this)
+a {
+  text-decoration : none;
+  &:hover {
+    text-shadow : 0 0 5px red;
+  }
+}
+
+hr {
+  line-height : .5em;
+}
+
+#container {
+  margin     : 0 1%;
+  width      : 98%;
+  text-align : justify;
+  //border     : 1px solid red;
+}
+
+#main {
+  text-align : center;
+}
+
+//Changement du bgc en modifiant la color ori
+//Utilisation des partenthèses pour gérer priorité math
+footer {
+  //background-color : @bg - #050505;
+  background-color : darken(@bg, 5%);
+  margin           : 0 1%;
+  border-top       : @unpx*5 - (@deuxpx+2px) solid black;
+  color            : grey;
+  text-align       : right;
+  font-style       : italic;
+  font-size        : .7em;
+  //line-height : 0;
+  p {
+    margin-top : -2px;
+  }
+}
+
+td {
+  font-size : 1.2em;
+  padding   : 1px 5px;
+}
+
+#container.center {
+  text-align : center;
+}
