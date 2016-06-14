@@ -31,6 +31,7 @@
       <li><a href="projets.php">Projets</a></li>
       <li><a href="u.php">U</a></li>
       <li><a href="jq.php">Jq</a></li>
+      <li><a href="sortListe.php">sortListe</a></li>
     </ul>
 
   </div>

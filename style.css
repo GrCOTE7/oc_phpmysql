@@ -55,6 +55,41 @@ td {
   font-size: 1.2em;
   padding: 1px 5px;
 }
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+}
+section#photoDnD {
+  width: 98%;
+  margin: 0 auto;
+  /* style global de la liste non ordonné */
+  /* style des éléments de la liste */
+  /* style de l'élément fantome, qui apparait losque que l'on bouge un élément */
+}
+section#photoDnD ul#list-photos {
+  border: 1px solid red;
+  list-style: none;
+  display: flex;
+}
+section#photoDnD #list-photos li {
+  border: 2px solid #777;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  padding: 5px 4px;
+  cursor: move;
+  width: 92px;
+  height: 94px;
+  margin-right: 5px;
+  background: #fff;
+  color: #212326;
+  font-size: 12px;
+  box-shadow: 3px 3px 10px #eee;
+}
+section#photoDnD ul#list-photos li.highlight {
+  background: #f2f2f2;
+  border: 2px dashed #212326;
+}
 #projet {
   width: 98%;
   line-height: 1;
@@ -90,7 +125,7 @@ td {
   border-radius: 4px;
   height: 25px;
 }
-h1 {
+#projet h1 {
   padding: 3px 5px;
   border-radius: 7px;
   text-align: center;
@@ -99,23 +134,23 @@ h1 {
   height: 555px;
   transition: all 2s ease-in-out;
 }
-h1:hover {
+#projet h1:hover {
   color: red;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
-h1:nth-child(2) {
+#projet h1:nth-child(2) {
   font-size: 1em;
   display: none;
   vertical-align: middle;
 }
-#blocliste #liste {
+#projet h1 #blocliste #liste {
   list-style-type: none;
   margin: 0 auto 20px;
   padding: 0 5px;
   width: 70%;
 }
-#blocliste #liste li {
+#projet h1 #blocliste #liste li {
   transition: all 0.5s ease-in-out;
   background: cornsilk;
   margin: 10px;
@@ -127,33 +162,33 @@ h1:nth-child(2) {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-#blocliste #liste li:hover {
+#projet h1 #blocliste #liste li:hover {
   transition: all 0.25s ease-in-out;
   color: green;
   background: yellow;
 }
-#blocliste #liste li span {
+#projet h1 #blocliste #liste li span {
   position: absolute;
   margin-left: -1.2em;
 }
-#blocliste #bloctableau .current-row {
+#projet h1 #bloctableau .current-row {
   /*background-color : #B24926;*/
   /*color : #FFF;*/
 }
-#blocliste #bloctableau .current-col {
+#projet h1 #bloctableau .current-col {
   /*background-color : #1b1b1b;*/
   /*color            : #FFF;*/
 }
-#blocliste #bloctableau .tbl-qa {
+#projet h1 #bloctableau .tbl-qa {
   width: 100%;
   font-size: 0.9em;
   /*background-color : #f5f5f5;*/
 }
-#blocliste #bloctableau .tbl-qa th.table-header {
+#projet h1 #bloctableau .tbl-qa th.table-header {
   text-align: left;
   padding: 0 10px 10px 10px;
 }
-#blocliste #bloctableau .tbl-qa .table-row td {
+#projet h1 #bloctableau .tbl-qa .table-row td {
   padding: 5px 10px;
   background-color: #FDFDFD;
 }

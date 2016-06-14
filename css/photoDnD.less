@@ -1,0 +1,41 @@
+h1 {
+  //color      : violet;
+  text-align : center;
+  font-size  : 1.5em;
+}
+
+section#photoDnD {
+  width  : 98%;
+  margin : 0 auto;
+  /* style global de la liste non ordonné */
+  ul#list-photos {
+    border     : 1px solid red;
+    //width      : 100%;
+    list-style : none;
+    //height     : 100%;
+    display    : flex;
+  }
+
+  /* style des éléments de la liste */
+  #list-photos li {
+    border                : 2px solid #777;
+    -webkit-border-radius : 7px;
+    -moz-border-radius    : 7px;
+    border-radius         : 7px;
+    padding               : 5px 4px;
+    cursor                : move;
+    width                 : 92px;
+    height                : 94px;
+    //float                 : left;
+    margin-right          : 5px;
+    background            : #fff;
+    color                 : #212326;
+    font-size             : 12px;
+    box-shadow            : 3px 3px 10px #eee;
+  }
+  /* style de l'élément fantome, qui apparait losque que l'on bouge un élément */
+  ul#list-photos li.highlight {
+    background : #f2f2f2;
+    border     : 2px dashed #212326;
+  }
+}

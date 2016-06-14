@@ -1,5 +1,4 @@
 <?
-session_start ();
 include 'top.php' ?>
 
 <div id="container">
