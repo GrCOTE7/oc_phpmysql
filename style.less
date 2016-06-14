@@ -41,7 +41,7 @@ body {
   margin-top : 20px;
   li {
     margin           : 0 2%;
-    padding          : 5px 2%;
+    padding          : 5px 1%;
     border           : 1px solid orange;
     .border-radius(7px); // Par défaut 10px
     //.border-radius(7px); // Par défaut 10px
@@ -51,11 +51,11 @@ body {
 }
 
 .animelementin {
-  transition : all .5s ease-in-out;
+  transition : all .25s ease-in-out;
 }
 
 .animelementout {
-  transition : all 2s ease-in-out;
+  transition : all .5s ease-in-out;
 }
 
 //Utilisation de & (=$this)
@@ -73,14 +73,6 @@ a {
 
 hr {
   line-height : .5em;
-}
-
-#projet {
-
-}
-
-#main {
-  text-align : center;
 }
 
 //Changement du bgc en modifiant la color ori
@@ -124,6 +116,7 @@ td {
     border          : 2px solid red;
     .border-radius();
     margin-bottom   : 10px;
+    text-align      : center;
 
     section {
       -webkit-flex : 1; /* Safari 6.1+ */
@@ -132,94 +125,103 @@ td {
     }
   }
   header {
-    transition : all 2s ease-in-out;
-    &:hover {
-      transition : all .5s ease-in-out;
-    }
-  }
-
-  h1 {
-    background-color : orange;
-    padding          : 3px 5px;
-    border-radius    : 7px;
-    text-align       : center;
-    font-size        : 1.2em;
-    margin-top       : 0;
-    height           : 25px;
-    transition       : all 2s ease-in-out;
-    &:hover {
-      color      : red;
-      cursor     : pointer;
-      transition : all .5s ease-in-out;
-    }
-    &:nth-child(2) {
-      font-size      : 1em;
-      display        : none;
-      vertical-align : middle;
-    }
-  }
-
-  #blocliste {
-
-    //width  : 50%;
-    //border : 1px solid blue;
-
-    #liste {
-      list-style-type : none;
-      margin          : 0 auto 20px;
-      padding         : 0 5px;
-      width           : 60%;
-      //border:1px solid red;
-    }
-
-    #liste li {
-      &:hover {
-        color      : green;
-        background : yellow;
-      }
-      margin    : 10px;
-      padding   : 10px 1em 0 2em;
-      font-size : 1.2em;
-      height    : 40px;
-      cursor    : pointer;
-      .border-radius(5px);
-      //border:1px solid blue;
-    }
-
-    #liste li span {
-      position    : absolute;
-      margin-left : -1.3em;
-      //border:1px solid green;
-    }
-
-    #bloctableau {
-      .current-row {
-        /*background-color : #B24926;*/
-        /*color : #FFF;*/
-      }
-
-      .current-col {
-        /*background-color : #1b1b1b;*/
-        /*color            : #FFF;*/
-      }
-
-      .tbl-qa {
-        width     : 100%;
-        font-size : 0.9em;
-        /*background-color : #f5f5f5;*/
-      }
-
-      .tbl-qa th.table-header {
-        text-align : left;
-        padding    : 0 10px 10px 10px;
-      }
-
-      .tbl-qa .table-row td {
-        padding          : 5px 10px;
-        background-color : #FDFDFD;
-
-      }
-    }
-
+    //transition : all 2s ease-in-out;
+    //&:hover {
+    //  transition : all .5s ease-in-out;
+    background : orange;
+    .border-radius(4px);
+    height     : 25px;
   }
 }
+
+h1 {
+  //color:black;
+  //background-color : orange;
+  padding       : 3px 5px;
+  border-radius : 7px;
+  text-align    : center;
+  font-size     : 1.2em;
+  margin        : 0;
+  //margin-top    : 0;
+  height        : 555px;
+  //position      : top;
+  transition    : all 2s ease-in-out;
+  &:hover {
+    color      : red;
+    cursor     : pointer;
+    transition : all .5s ease-in-out;
+  }
+  &:nth-child(2) {
+    font-size      : 1em;
+    display        : none;
+    vertical-align : middle;
+  }
+}
+
+#blocliste {
+
+  //width  : 50%;
+  //border : 1px solid blue;
+
+  #liste {
+    list-style-type : none;
+    margin          : 0 auto 20px;
+    padding         : 0 5px;
+    width           : 70%;
+    //border:1px solid red;
+  }
+
+  #liste li {
+    &:hover {
+      .animelementin;
+      color      : green;
+      background : yellow;
+    }
+    .animelementout;
+    background : cornsilk;
+    margin     : 10px;
+    padding    : 10px 1em 0 2em;
+    font-size  : 1.2em;
+    height     : 40px;
+    cursor     : pointer;
+    .border-radius(5px);
+    //border:1px solid blue;
+  }
+
+  #liste li span {
+    position    : absolute;
+    margin-left : -1.2em;
+    //border:1px solid green;
+  }
+
+  #bloctableau {
+    .current-row {
+      /*background-color : #B24926;*/
+      /*color : #FFF;*/
+    }
+
+    .current-col {
+      /*background-color : #1b1b1b;*/
+      /*color            : #FFF;*/
+    }
+
+    .tbl-qa {
+      width     : 100%;
+      font-size : 0.9em;
+      /*background-color : #f5f5f5;*/
+    }
+
+    .tbl-qa th.table-header {
+      text-align : left;
+      padding    : 0 10px 10px 10px;
+    }
+
+    .tbl-qa .table-row td {
+      padding          : 5px 10px;
+      background-color : #FDFDFD;
+
+    }
+  }
+
+}
+

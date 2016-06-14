@@ -15,7 +15,7 @@ body {
 }
 .element_menu ul li {
   margin: 0 2%;
-  padding: 5px 2%;
+  padding: 5px 1%;
   border: 1px solid orange;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -24,26 +24,23 @@ body {
   list-style-type: none;
 }
 .animelementin {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .animelementout {
-  transition: all 2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 a {
   text-decoration: none;
-  transition: all 2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 a:hover {
   color: red;
   text-decoration: none;
   text-shadow: 0 0 5px red;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 hr {
   line-height: .5em;
-}
-#main {
-  text-align: center;
 }
 footer {
   background-color: #fff3c3;
@@ -77,6 +74,7 @@ td {
   -moz-border-radius: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 #projet #main section {
   -webkit-flex: 1;
@@ -86,38 +84,40 @@ td {
   flex: 1;
 }
 #projet header {
-  transition: all 2s ease-in-out;
+  background: orange;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  height: 25px;
 }
-#projet header:hover {
-  transition: all 0.5s ease-in-out;
-}
-#projet h1 {
-  background-color: orange;
+h1 {
   padding: 3px 5px;
   border-radius: 7px;
   text-align: center;
   font-size: 1.2em;
-  margin-top: 0;
-  height: 25px;
+  margin: 0;
+  height: 555px;
   transition: all 2s ease-in-out;
 }
-#projet h1:hover {
+h1:hover {
   color: red;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
-#projet h1:nth-child(2) {
+h1:nth-child(2) {
   font-size: 1em;
   display: none;
   vertical-align: middle;
 }
-#projet #blocliste #liste {
+#blocliste #liste {
   list-style-type: none;
   margin: 0 auto 20px;
   padding: 0 5px;
-  width: 60%;
+  width: 70%;
 }
-#projet #blocliste #liste li {
+#blocliste #liste li {
+  transition: all 0.5s ease-in-out;
+  background: cornsilk;
   margin: 10px;
   padding: 10px 1em 0 2em;
   font-size: 1.2em;
@@ -127,32 +127,33 @@ td {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-#projet #blocliste #liste li:hover {
+#blocliste #liste li:hover {
+  transition: all 0.25s ease-in-out;
   color: green;
   background: yellow;
 }
-#projet #blocliste #liste li span {
+#blocliste #liste li span {
   position: absolute;
-  margin-left: -1.3em;
+  margin-left: -1.2em;
 }
-#projet #blocliste #bloctableau .current-row {
+#blocliste #bloctableau .current-row {
   /*background-color : #B24926;*/
   /*color : #FFF;*/
 }
-#projet #blocliste #bloctableau .current-col {
+#blocliste #bloctableau .current-col {
   /*background-color : #1b1b1b;*/
   /*color            : #FFF;*/
 }
-#projet #blocliste #bloctableau .tbl-qa {
+#blocliste #bloctableau .tbl-qa {
   width: 100%;
   font-size: 0.9em;
   /*background-color : #f5f5f5;*/
 }
-#projet #blocliste #bloctableau .tbl-qa th.table-header {
+#blocliste #bloctableau .tbl-qa th.table-header {
   text-align: left;
   padding: 0 10px 10px 10px;
 }
-#projet #blocliste #bloctableau .tbl-qa .table-row td {
+#blocliste #bloctableau .tbl-qa .table-row td {
   padding: 5px 10px;
   background-color: #FDFDFD;
 }

@@ -23,12 +23,13 @@
         <?
         foreach ( $t as $item ) {
 //          echo 'item' . $item['id'] . 'l';
-          echo '<li class="ui-state-default" id="item' . $item['id'] . 'l"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>' . $item['name'] . '</li>';
+          echo '<li class="ui-state-default" id="item' . $item['id'] . 'l"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>' . $item['name'] . ' (' . $item['uorder'] . ')</li>';
         }
         ?>
       </ul>
     </section>
 
+    
     <section id="tableau">
       <?php
       require_once ( "tableau/PDOManager.php" );
@@ -42,9 +43,11 @@
       <table class="tbl-qa" id="tableau">
 
         <thead>
+
         <tr>
           <th colspan="3">Tableau</th>
         </tr>
+
         <tr>
           <th class="table-header" width="10%">Id</th>
           <th class="table-header">Name</th>
@@ -59,7 +62,7 @@
           ?>
           <tr class="table-row">
 
-            <td><?= $d['id'] ?></td>
+            <td><?= ( $d['id'] - 7 ) ?></td>
             <td><?= $d['name'] ?></td>
             <!--
         <td contenteditable="true"
