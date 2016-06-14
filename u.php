@@ -1,7 +1,7 @@
 <? include 'top.php';
 require_once ( "tableau/PDOManager.php" );
 $db     = new PDOManager();
-$sql    = "SELECT demo_photo.id, demo_photo.name FROM demo_photo ORDER BY demo_photo.position LIMIT 3";
+$sql    = "SELECT demo_photo.id, demo_photo.name FROM demo_photo ORDER BY demo_photo.position LIMIT 5";
 $photos = $db->query ( $sql );
 ?>
 <link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css"/>

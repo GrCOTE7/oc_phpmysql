@@ -8,12 +8,29 @@ section#photoDnD {
   width  : 98%;
   margin : 0 auto;
   /* style global de la liste non ordonné */
+  //border : 1px solid red;
+
+  ul {
+    //padding-start : 0;
+    -webkit-padding-before : 0;
+    -webkit-padding-start  : 0;
+    -webkit-padding-end    : 0;
+    -webkit-padding-after  : 0;
+  }
+
+  li {
+    margin-bottom : 10px;
+  }
+
   ul#list-photos {
-    border     : 1px solid red;
-    //width      : 100%;
-    list-style : none;
+    //border          : 1px solid blue;
+    width           : 100%;
+    list-style      : none;
     //height     : 100%;
-    display    : flex;
+    display         : flex;
+    justify-content : space-around;
+    flex-wrap       : wrap-reverse;
+    //position: relative;
   }
 
   /* style des éléments de la liste */
@@ -23,15 +40,19 @@ section#photoDnD {
     -moz-border-radius    : 7px;
     border-radius         : 7px;
     padding               : 5px 4px;
-    cursor                : move;
+    cursor                : pointer;
     width                 : 92px;
-    height                : 94px;
+    //height                : 94px;
     //float                 : left;
-    margin-right          : 5px;
+    //margin-right          : 5px;
     background            : #fff;
-    color                 : #212326;
+    //color                 : #212326;
+    color                 : red;
     font-size             : 12px;
     box-shadow            : 3px 3px 10px #eee;
+    &:active {
+      cursor : move;
+    }
   }
   /* style de l'élément fantome, qui apparait losque que l'on bouge un élément */
   ul#list-photos li.highlight {
