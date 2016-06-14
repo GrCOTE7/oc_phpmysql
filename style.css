@@ -32,7 +32,8 @@ a:hover {
 hr {
   line-height: .5em;
 }
-#container {
+#container,
+#projet {
   margin: 0 1%;
   width: 98%;
   text-align: justify;
@@ -58,4 +59,11 @@ td {
 }
 #container.center {
   text-align: center;
+}
+#projet h1 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+#projet h1:nth-child(2) {
+  display: none;
 }
