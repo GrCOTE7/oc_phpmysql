@@ -64,26 +64,30 @@ body #projet {
 #projet h1 {
   font-size: 1.2em;
   margin-top: 0;
+  height: 25px;
 }
 #projet h1:hover {
   color: red;
   cursor: pointer;
 }
 #projet h1:nth-child(2) {
+  font-size: 1em;
   display: none;
+  vertical-align: middle;
 }
 #projet #sortable {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 5px;
   width: 40%;
 }
 #projet #sortable li {
-  margin: 0 3px 3px 3px;
+  margin: 10px;
   padding: 0;
+  padding-top: 10px;
   padding-left: 1.5em;
   font-size: 1.2em;
-  height: 18px;
+  height: 40px;
   cursor: pointer;
 }
 #projet #sortable li span {

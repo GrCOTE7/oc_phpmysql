@@ -2,22 +2,22 @@
 <link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
 <div id="projet">
   <h1>Tableau Inline Editinig Blur</h1>
-  <h1>Utilise jQ API + jQ-UI</h1>
+  <h1>Utilise HTML5 + CSS3 + LESS + Bootstrap + PHP/MySQL + jQ API + jQ-UI</h1>
 
   <ul id="sortable">
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+    <li class="ui-state-default" id="item1"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default" id="item2"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default" id="item3"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+    <li class="ui-state-default" id="item4"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+    <li class="ui-state-default" id="item5"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+    <li class="ui-state-default" id="item6"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+    <li class="ui-state-default" id="item7"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
   </ul>
-  
+
   <?php
   require_once ( "tableau/PDOManager.php" );
   $db  = new PDOManager();
-  $sql = 'SELECT * from taches_etapes ORDER BY ordre';
+  $sql = 'SELECT * from sortable_liste_items ORDER BY uorder';
   $t   = $db->query ( $sql );
   ?>
   <style>
@@ -82,6 +82,7 @@
   </script>
 
   <table class="tbl-qa">
+    <!--
     <thead>
     <tr>
       <th class="table-header" width="10%">Id</th>
@@ -91,6 +92,7 @@
       <th class="table-header" style="text-align: center;">Ordre</th>
     </tr>
     </thead>
+    -->
     <tbody>
 
     <?
